@@ -1,0 +1,3 @@
+[submodule "sirius-emf-json"]
+	path = sirius-emf-json
+	url = git@github.com:eclipse-sirius/sirius-emf-json.git
