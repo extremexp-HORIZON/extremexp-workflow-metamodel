@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ASCII"?>
+<workflow:Specification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:workflow="http://www.example.org/workflow">
+<parametertypes xsi:type="workflow:PrimitiveType" name="NUMBER" />
+<workflow name="main">
+<node xsi:type="workflow:EventNode" />
+<node xsi:type="workflow:Task" name="task-pnA9Coua9VGmvilR_VNb0" />
+<node xsi:type="workflow:Task" name="task-ejmE63Jd7MJMeG5Bp1RYg" />
+<node xsi:type="workflow:Task" name="task-xVnzPt-Vm_pF2QdnB1foD" />
+<node xsi:type="workflow:Task" name="task-CxuMvrZPLhkDejNuD8zOW" />
+<node xsi:type="workflow:EventNode" name="END" />
+<node xsi:type="workflow:Task" name="task-O3ZF2PY-WH9vSuBUBX1ZM" />
+<node xsi:type="workflow:Parallel" />
+<node xsi:type="workflow:ParallelJoin" />
+<link xsi:type="workflow:RegularLink" output="//@workflow.0/@node.0" input="//@workflow.0/@node.1" />
+<link xsi:type="workflow:RegularLink" output="//@workflow.0/@node.2" input="//@workflow.0/@node.3" />
+<link xsi:type="workflow:RegularLink" output="//@workflow.0/@node.3" input="//@workflow.0/@node.1" />
+<link xsi:type="workflow:RegularLink" output="//@workflow.0/@node.3" input="//@workflow.0/@node.7" />
+<link xsi:type="workflow:RegularLink" output="//@workflow.0/@node.7" input="//@workflow.0/@node.6" />
+<link xsi:type="workflow:RegularLink" output="//@workflow.0/@node.7" input="//@workflow.0/@node.4" />
+<link xsi:type="workflow:RegularLink" output="//@workflow.0/@node.6" input="//@workflow.0/@node.8" />
+<link xsi:type="workflow:RegularLink" output="//@workflow.0/@node.4" input="//@workflow.0/@node.8" />
+<link xsi:type="workflow:RegularLink" output="//@workflow.0/@node.8" input="//@workflow.0/@node.5" />
+</workflow>
+<workflow name="extract_data">
+<node xsi:type="workflow:EventNode" />
+<node xsi:type="workflow:Task" name="task-mDtzBp0thidem7mN7l1Tn" />
+<node xsi:type="workflow:EventNode" name="END" />
+<link xsi:type="workflow:RegularLink" output="//@workflow.1/@node.0" input="//@workflow.1/@node.1" />
+<link xsi:type="workflow:RegularLink" output="//@workflow.1/@node.1" input="//@workflow.1/@node.2" />
+</workflow>
+<deployedworkflow workflow="//@workflow.0">
+<configuredtask name="read_data" description="no description" implementationRef="" configuration="//@workflow.0/@node.1" />
+<configuredtask name="clean_data" description="no description" implementationRef="" configuration="//@workflow.0/@node.2" />
+<configuredtask name="train_model" description="trains the model&#xA;" implementationRef="" configuration="//@workflow.0/@node.3">
+<parameters xsi:type="workflow:StaticParameter" name="accuracy" type="//@parametertypes.0" />
+</configuredtask>
+<configuredtask name="validation_by_machine" description="no description" implementationRef="" configuration="//@workflow.0/@node.4" />
+<configuredtask name="validation_by_human" description="no description" implementationRef="" configuration="//@workflow.0/@node.6" />
+</deployedworkflow>
+<deployedworkflow workflow="//@workflow.0">
+<configuredtask name="extract_data" description="no description" implementationRef="NoReference" configuration="//@workflow.0/@node.1" />
+<configuredtask name="clean_data" description="no description" implementationRef="" configuration="//@workflow.0/@node.2" />
+<configuredtask name="train_model" description="trains the model&#xA;" implementationRef="" configuration="//@workflow.0/@node.3">
+<parameters xsi:type="workflow:StaticParameter" name="accuracy" type="//@parametertypes.0" />
+</configuredtask>
+<configuredtask name="validation_by_machine" description="no description" implementationRef="" configuration="//@workflow.0/@node.4" />
+<configuredtask name="validation_by_human" description="no description" implementationRef="" configuration="//@workflow.0/@node.6" />
+</deployedworkflow>
+<deployedworkflow workflow="//@workflow.0">
+<configuredtask name="read_from_sensors" description="no description" implementationRef="" configuration="//@workflow.0/@node.1" />
+<configuredtask name="clean_data" description="no description" implementationRef="" configuration="//@workflow.0/@node.2" />
+<configuredtask name="train_model" description="trains the model&#xA;" implementationRef="" configuration="//@workflow.0/@node.3">
+<parameters xsi:type="workflow:StaticParameter" name="accuracy" type="//@parametertypes.0" />
+</configuredtask>
+<configuredtask name="validation_by_machine" description="no description" implementationRef="" configuration="//@workflow.0/@node.4" />
+<configuredtask name="validation_by_human" description="no description" implementationRef="" configuration="//@workflow.0/@node.6" />
+</deployedworkflow>
+<deployedworkflow workflow="//@workflow.1">
+<configuredtask name="task" description="no description" implementationRef="" configuration="//@workflow.1/@node.1" />
+</deployedworkflow>
+<experimentspace deployedworkflow="//@deployedworkflow.0" />
+<experimentspace deployedworkflow="//@deployedworkflow.1" />
+<experimentspace deployedworkflow="//@deployedworkflow.2" />
+<experimentspace deployedworkflow="//@deployedworkflow.3" />
+</workflow:Specification>

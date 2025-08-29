@@ -1,7 +1,16 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: eu.extremexp.workflow.metamodel.ge
-Bundle-SymbolicName: eu.extremexp.workflow.metamodel.ge; singleton:=true
+Bundle-Name: %pluginName
+Bundle-SymbolicName: eu.extremexp.workflow.metamodel.ge;singleton:=true
+Automatic-Module-Name: eu.extremexp.workflow.metamodel.ge
 Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Export-Package: eu.extremexp.workflow.metamodel.ge.workflow,
+ eu.extremexp.workflow.metamodel.ge.workflow.impl,
+ eu.extremexp.workflow.metamodel.ge.workflow.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy

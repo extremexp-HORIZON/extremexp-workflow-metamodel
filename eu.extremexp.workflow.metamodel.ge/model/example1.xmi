@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ASCII"?>
+<workflow:Specification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:workflow="http://www.example.org/workflow">
+<parametertypes xsi:type="workflow:PrimitiveType" name="NUMBER" />
+<workflow name="main">
+<node xsi:type="workflow:EventNode" />
+<node xsi:type="workflow:Task" name="task-pnA9Coua9VGmvilR_VNb0" />
+<node xsi:type="workflow:Task" name="task-ejmE63Jd7MJMeG5Bp1RYg" />
+<node xsi:type="workflow:Task" name="task-xVnzPt-Vm_pF2QdnB1foD" />
+<node xsi:type="workflow:Task" name="task-CxuMvrZPLhkDejNuD8zOW" />
+<node xsi:type="workflow:EventNode" name="END" />
+<link xsi:type="workflow:RegularLink" output="//@workflow.0/@node.0" input="//@workflow.0/@node.1" />
+<link xsi:type="workflow:RegularLink" output="//@workflow.0/@node.2" input="//@workflow.0/@node.3" />
+<link xsi:type="workflow:RegularLink" output="//@workflow.0/@node.3" input="//@workflow.0/@node.4" />
+<link xsi:type="workflow:RegularLink" output="//@workflow.0/@node.3" input="//@workflow.0/@node.1" />
+<link xsi:type="workflow:RegularLink" output="//@workflow.0/@node.4" input="//@workflow.0/@node.5" />
+</workflow>
+<deployedworkflow workflow="//@workflow.0">
+<configuredtask name="read_data" description="no description" implementationRef="" configuration="//@workflow.0/@node.1" />
+<configuredtask name="clean_data" description="no description" implementationRef="" configuration="//@workflow.0/@node.2" />
+<configuredtask name="train_model" description="trains the model&#xA;" implementationRef="" configuration="//@workflow.0/@node.3">
+<parameters xsi:type="workflow:StaticParameter" name="accuracy" type="//@parametertypes.0" />
+</configuredtask>
+<configuredtask name="validate_model" description="no description" implementationRef="" configuration="//@workflow.0/@node.4" />
+</deployedworkflow>
+<experimentspace deployedworkflow="//@deployedworkflow.0" />
+</workflow:Specification>
