@@ -40,7 +40,7 @@ public interface WorkflowPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.example.org/workflow";
+	String eNS_URI = "http://www.ge.extremexp.eu/workflow";
 
 	/**
 	 * The package namespace name.

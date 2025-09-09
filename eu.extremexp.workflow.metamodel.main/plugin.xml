@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated workflow -->
       <package
-            uri="http://www.example.org/workflow"
+            uri="http://www.extremexp.eu/workflow"
             class="eu.extremexp.workflow.metamodel.main.workflow.WorkflowPackage"
             genModel="model/workflow.genmodel"/>
    </extension>
